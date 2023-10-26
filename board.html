@@ -1,6 +1,14 @@
-﻿<ul>
-  <li ng-repeat="sound in sounds">
-    <button type="button" ng-click="play(sound)">{{ sound }}</button>
-    <audio preload="auto" ng-src="{{ 'mp3/' + sound + '.mp3' }}" id="{{ sound }}"></audio>
-  </li>
-</ul>
+﻿<div class="toolbar">
+  <button class="btn" ng-click="reset()">Reset</button>
+  <ul>
+    <li ng-repeat="sound in sounds">
+      <audio
+        controls
+        preload="auto"
+        ng-src="{{ 'mp3/' + sound.id + '.mp3' }}"
+        id="{{ sound.id }}"
+      ></audio>
+      <div class="label">{{ sound.id }}</div>
+    </li>
+  </ul>
+</div>
